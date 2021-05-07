@@ -16,14 +16,26 @@ let getInputRepo=(e)=> {
     setrepoName(e.target.value)  
 }
 function getData(){
-    let url=`https://google.com/${ownerName}/${repoName}`
+    let url=`${ownerName}/${repoName}`
     setrepoUrl(url)
    
 }
 useEffect(() => {
-    fetch('repoUrl').then(result=>{console.log(result)})
+    let newData={
+        'profile':repoUrl
+    }
+   const result = fetch('http://localhost:2000/api/find',{
+        method:'POST',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify(newData)
+    }
+  
 
-
+    
+    ).then(res => res.json())
+    .then(json => console.log(json));
 
 }, [repoUrl])
     return (
