@@ -1,0 +1,235 @@
+.layer1{
+    color:white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 22px;
+    margin-left: 21%;
+    padding-top: 7%;
+}
+a{
+    color: #54a3fd;
+text-decoration: none;
+}
+.sub-layer-1{
+    font-size: 14px;
+}
+.sub-layer-1-link{
+    font-size: 14px;
+    border-bottom:  1px solid;
+    border-color: rgb(58, 58, 58); 
+    padding-bottom: 20px;
+    width: 72%;
+}
+.layer2-head
+{
+    display: flex;
+    padding-top: 25px;
+    
+    
+}
+.owner-name
+{
+
+    font-size:15px;
+}
+.repository{
+    padding-left: 125px;
+    font-size: 15px;
+}
+.input-boxes-1
+{
+    padding-top: 12px;
+    display: flex;
+}
+input[type="text"], textarea {
+
+    background-color : rgba(2, 7, 15, 0.5); 
+    height:25px;
+    border-radius: 6px;
+    box-shadow:rgb(11, 137, 196);
+    color:#fff;
+  
+  } 
+
+.input-box-repo
+{
+    padding-left: 6px;
+}
+.ending{
+    font-size:14px;
+    line-height: 21px;
+    padding-top: 6px;
+}
+.describe
+{
+    display: flex;
+    margin-top: 13px;
+}
+.description{
+    font-size: 14px;
+    font-weight: 600;
+    padding-bottom:7px ;
+   
+}
+.optional
+{
+    font-size: 12px;
+    padding-left: 5px;
+}
+.describe-input
+{
+    width: 650px;
+    padding-bottom: 5px;
+
+
+}
+.total-wrap
+{
+    
+    border-bottom: 1px solid ;
+    border-color: rgb(58, 58, 58); 
+    width: 72%;
+}
+.area{
+    margin-bottom: 15px;
+}
+.public-container{
+    display: flex;
+}
+.sublayer-4
+{
+    margin-top: 9px;
+    border-bottom: 1px solid ;
+    border-color: rgb(58, 58, 58); 
+    padding-bottom: 12px;
+    width: 72%;
+}
+.anyone
+{
+    font-size: 13px;
+    color: rgb(202, 194, 194);
+}
+.public{
+    font-size: 15px;
+    font-weight: normal;
+}
+.public-writting{
+    padding-left: 5px;
+}
+.public-icon{
+    margin-top: 7px;
+}
+.private-container{
+    margin-top: 9px;
+    display: flex;
+   
+}
+.private{
+    font-size: 15px;
+    font-weight: normal;
+   
+}
+.private-writting{
+    padding-left: 5px;
+}
+.private-icon{
+    margin-top: 7px;
+}
+.sublayer-1
+{
+    display: flex;
+}
+.sublayer-5-container{
+    padding-bottom: 20px;
+}
+.head-sublayer-5{
+    font-size: 15px;
+    padding-top: 14px;
+    font-weight: bold;
+    padding-bottom: 5px;
+  
+}
+
+.subhead-sublayer-5
+{
+    font-size: 12px;
+    color: rgb(199, 195, 195);
+    padding-bottom: 6px;
+}
+.sublayer-1-head{
+   
+}
+.first-message
+{
+    font-size: 14px;
+    font-weight: 400;
+}
+.sublayer-1-subhead{
+    font-size: 12px;
+    color: rgb(199, 195, 195);
+}
+.sublayer-1-head{
+    padding-left: 5px;
+  
+}
+/* padding manager */
+.sublayer-2{
+    padding-top: 13px;
+    display: flex;
+}
+.first-message-2
+{
+    font-size: 14px;
+    font-weight: 400;
+}
+.sublayer-2-subhead{
+    font-size: 12px;
+    color: rgb(199, 195, 195);
+}
+.sublayer-2-head{
+    padding-left: 5px;
+  
+}
+
+
+
+.sublayer-3{
+    padding-top: 13px;
+    display: flex;
+}
+.first-message-3
+{
+    font-size: 14px;
+    font-weight: 400;
+}
+.sublayer-3-subhead{
+    font-size: 12px;
+    color: rgb(199, 195, 195);
+}
+.sublayer-3-head{
+    padding-left: 5px;
+  
+}
+.button-container{
+    width: 72%;
+    border-top: 1px solid;
+    padding-top: 8px;
+    border-color: rgb(58, 58, 58); 
+}
+.btn{
+
+    color:#FFF;
+    background-color: #238836;
+    border-radius: 6px;
+    font-size: 14px;
+    padding: 5px 16px;
+    cursor: pointer;
+    border: 1px solid;
+    font-weight: 500;
+    ine-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.btn:hover
+{
+   background-color: #30aa46;;
+}
