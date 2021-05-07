@@ -52,7 +52,7 @@ useEffect(() => {
                 <div className="input-box-user">
                     <input height="50px" size="10"  onChange={e => getInputOwner(e)} ></input> /
                     </div>
-                <div className="input-box-repo"> <input onChange={e => getInputRepo(e)} type="text"></input></div>
+                <div className="input-box-repo"> <input onChange={e => getInputRepo(e)} type="text"></input><div className="spinnerBlock"><div className="spinner-custom"></div></div></div>
 
             </div> <div className="ending">Great repository names are short and memorable. Need inspiration? How about special-meme? </div>
             <div class="total-wrap"> <div className="area"> <div className="describe"> <div className="description">Description</div> <div className="optional">(optional)</div></div>
