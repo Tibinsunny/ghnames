@@ -34,32 +34,41 @@ useEffect(() => {
     let newData={
         'profile':repoUrl
     }
+if(repoUrl.length>1)
+{
+    const result = fetch('http://newclonegit.herokuapp.com/api/find',{
+        method:'POST',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify(newData)
+    }
+  
 
-        const result = fetch('http://localhost:2000/api/find',{
-            method:'POST',
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body:JSON.stringify(newData)
-        }
-      
     
-        
-        ).then(res => res.json())
-        .then(json => {
-            if(json.status=="404")
-            {
-                setspinner(false)
-                seterror('block')
-                setsuccess('none')
-            }
-            if(json.status=='200')
-            {
-                setspinner(false)
-                seterror('none')
-                setsuccess('block')
-            }
-        });
+    ).then(res => res.json())
+    .then(json => {
+        if(json.status=="404")
+        {
+            setspinner(false)
+            seterror('block')
+            setsuccess('none')
+        }
+        if(json.status=='200')
+        {
+            setspinner(false)
+            seterror('none')
+            setsuccess('block')
+        }
+    });  
+}
+else
+{
+            seterror('block')
+            setsuccess('none')
+            setspinner(false)
+}
+    
     
    }
    
