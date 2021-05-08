@@ -5,7 +5,7 @@ This is a very basic github clone. It simply allows user to search if a particul
 
 The front end is developed using React and is deployed in Netlify. 
 
-Backed-end api is a simple Nodejs+Express Applicaiton
+Backed-end api is a simple Nodejs+Express Application
 
 
 
