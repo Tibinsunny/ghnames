@@ -5,7 +5,7 @@ const api=require('./api/index')
 app.use(cors())
 app.use('/api',api)
 
-app.listen('2000',(err,succ)=>{
+app.listen(process.env.PORT || 2000,(err,succ)=>{
     if(err)
     {
         console.log("Something went wrong")
