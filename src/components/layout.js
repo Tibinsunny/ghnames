@@ -36,7 +36,7 @@ useEffect(() => {
     }
 if(repoUrl.length>1)
 {
-    const result = fetch('http://newclonegit.herokuapp.com/api/find',{
+    const result = fetch('https://newclonegit.herokuapp.com/api/find',{
         method:'POST',
         headers:{
             'Content-Type':'application/json'
