@@ -238,7 +238,7 @@ input[type="text"], textarea {
     height: 30px;
     width:30px;
     border:5px solid rgb(141, 139, 139);
-    border-top-color:rgb(37, 241, 65);
+    border-top-color:rgb(0, 255, 34);
     border-radius: 50px;
     animation:spinner 1s linear infinite;
 }
@@ -246,6 +246,7 @@ input[type="text"], textarea {
 {
     padding-left: 5px;
 }
+
 @keyframes spinner{
     to{
         transform:rotate(1turn);

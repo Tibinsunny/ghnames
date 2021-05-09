@@ -1,13 +1,15 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useRef} from 'react'
 import publicIco from '../images/publicimage.png'
 import privateIco from '../images/image-5.png'
 import layercss from './layer.css'
-import { getAllByPlaceholderText } from '@testing-library/dom'
-
 export default function Layout() {
 const [ownerName, setownerName] = useState('')
 const [repoName, setrepoName] = useState('')
 const [repoUrl, setrepoUrl] = useState('')
+const [spinner, setspinner] = useState(false)
+const [error, seterror] = useState('none')
+const [success, setsuccess] = useState('none')
+const initialRender = useRef(true);
 let getInputOwner=(e)=> {
     setownerName(e.target.value)
 
@@ -16,26 +18,52 @@ let getInputRepo=(e)=> {
     setrepoName(e.target.value)  
 }
 function getData(){
+    seterror('none')
+    setsuccess('none')
     let url=`${ownerName}/${repoName}`
     setrepoUrl(url)
+    setspinner(true)
    
 }
 useEffect(() => {
+    if(initialRender.current){
+        initialRender.current=false;
+    }
+   else
+   {
     let newData={
         'profile':repoUrl
     }
-   const result = fetch('http://localhost:2000/api/find',{
-        method:'POST',
-        headers:{
-            'Content-Type':'application/json'
-        },
-        body:JSON.stringify(newData)
-    }
-  
 
+        const result = fetch('http://localhost:2000/api/find',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(newData)
+        }
+      
     
-    ).then(res => res.json())
-    .then(json => console.log(json));
+        
+        ).then(res => res.json())
+        .then(json => {
+            if(json.status=="404")
+            {
+                setspinner(false)
+                seterror('block')
+                setsuccess('none')
+            }
+            if(json.status=='200')
+            {
+                setspinner(false)
+                seterror('none')
+                setsuccess('block')
+            }
+        });
+    
+   }
+   
+ 
 
 }, [repoUrl])
     return (
@@ -50,9 +78,14 @@ useEffect(() => {
                 <div className="repository"> Repository name<font color="red">*</font></div></div>
             <div className="input-boxes-1">
                 <div className="input-box-user">
-                    <input height="50px" size="10"  onChange={e => getInputOwner(e)} ></input> /
+                    <input height="50px" size="10" placeholder="Github UserName" onChange={e => getInputOwner(e)} ></input> /
                     </div>
-                <div className="input-box-repo"> <input onChange={e => getInputRepo(e)} type="text"></input><div className="spinnerBlock"><div className="spinner-custom"></div></div></div>
+                <div className="input-box-repo"> <input  placeholder="Repository Name" onChange={e => getInputRepo(e)} type="text"></input><div className="spinnerBlock">{
+                    spinner?<div className="spinner-custom"></div>:null
+                    }</div>
+                    <div className="error-x" style={{'display':error}}>X</div>
+                    <div className="success" style={{'font-size':'35px','display':success}}>&#10004;</div>
+                    </div>
 
             </div> <div className="ending">Great repository names are short and memorable. Need inspiration? How about special-meme? </div>
             <div class="total-wrap"> <div className="area"> <div className="describe"> <div className="description">Description</div> <div className="optional">(optional)</div></div>
